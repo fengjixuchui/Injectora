@@ -680,6 +680,8 @@ HMODULE CRemoteLoader::LoadLibraryFromMemory(PVOID BaseAddress, DWORD SizeOfModu
 	DebugShout("[LoadModuleFromMemory] Returning Pointer (0x%IX)", AllocatedRemoteMemory);
 	#endif
 
+	TerminateWorkerThread();
+	
 	return (HMODULE)AllocatedRemoteMemory;
 }
 
